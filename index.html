@@ -4,11 +4,11 @@
 <script>document.documentElement.className += ' js';</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abhishek Balakrishnan — Technologist & Carnatic Violinist</title>
-<meta name="description" content="Abhishek Balakrishnan. Two disciplines, one way of thinking: a Carnatic violinist and a technology leader. Founder of ANB Solutions.">
+<title>ANB Solutions — Fractional CTO, Enterprise AI & Automation, Product Strategy</title>
+<meta name="description" content="ANB Solutions helps software and services firms turn services into products, scale what works, and put AI and automation where it cuts engineering overhead. Fractional CTO leadership, technical due diligence, product strategy.">
 <meta name="theme-color" content="#0a0b0d">
-<meta property="og:title" content="Abhishek Balakrishnan">
-<meta property="og:description" content="Technologist & Carnatic violinist. Two disciplines, one way of thinking.">
+<meta property="og:title" content="ANB Solutions — Technology leadership for the climb from one to five">
+<meta property="og:description" content="Turn services into products. Scale what works. Put AI and automation where it pays off.">
 <meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,158 +18,384 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --ink:#0a0b0d;--line:rgba(255,255,255,.09);
-  --paper:#ece6d8;--gold:#c9a24b;--gold-soft:#e6cf9a;
-  --teal:#36c6a0;--teal-soft:#7ee3c6;
+  --ink:#0a0b0d;--ink-2:#101216;--ink-3:#161a20;
+  --line:rgba(255,255,255,.09);--line-2:rgba(255,255,255,.16);
+  --paper:#e8e9ea;--paper-dim:rgba(232,233,234,.58);--paper-faint:rgba(232,233,234,.34);
+  --teal:#36c6a0;--teal-soft:#7ee3c6;--teal-deep:#0f3b32;
   --serif:'Fraunces',Georgia,serif;--sans:'Hanken Grotesk',-apple-system,system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;
+  --maxw:1200px;
 }
-html{-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{background:var(--ink);color:var(--paper);font-family:var(--sans);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 ::selection{background:var(--teal);color:var(--ink)}
+section{scroll-margin-top:84px}
 
-.js .reveal{opacity:0;transform:translateY(20px)}
+.js .reveal{opacity:0;transform:translateY(22px)}
 .js .reveal.in{opacity:1;transform:none;transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
 .js .reveal.d1{transition-delay:.08s}.js .reveal.d2{transition-delay:.16s}.js .reveal.d3{transition-delay:.24s}.js .reveal.d4{transition-delay:.32s}
-@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1!important;transform:none!important}}
+@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1!important;transform:none!important}html{scroll-behavior:auto}}
 
-/* ───── COIN INTRO ───── */
-#coin-intro{position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;background:radial-gradient(ellipse 75% 75% at 50% 45%, #0c0e11 0%, #050506 78%);animation:coinOut .9s ease 3.1s forwards}
-#coin-intro.gone{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .5s,visibility .5s}
-@keyframes coinOut{to{opacity:0;visibility:hidden;pointer-events:none}}
-.coin-scene{perspective:1000px}
-.coin{width:188px;height:188px;position:relative;transform-style:preserve-3d;animation:coinSpin 2.7s cubic-bezier(.3,.1,.1,1) forwards}
-@keyframes coinSpin{0%{transform:rotateY(0) scale(.8)}20%{transform:rotateY(540deg) scale(1.03)}55%{transform:rotateY(900deg) scale(.98)}80%{transform:rotateY(1040deg) scale(1.01)}100%{transform:rotateY(1080deg) scale(1)}}
-.coin-rim{position:absolute;inset:-5px;border-radius:50%;z-index:-1;background:conic-gradient(from 0deg,var(--gold),var(--teal),var(--gold));filter:blur(8px);opacity:.45}
-.coin-face{position:absolute;inset:0;border-radius:50%;backface-visibility:hidden;display:grid;place-items:center;text-align:center;overflow:hidden;background:radial-gradient(circle at 38% 32%,#16181d,#0a0b0d)}
-.coin-face.front{box-shadow:inset 0 0 0 2px rgba(201,162,75,.55),inset 0 0 0 4px rgba(0,0,0,.7),0 18px 50px rgba(0,0,0,.6)}
-.coin-face.back{transform:rotateY(180deg);box-shadow:inset 0 0 0 2px rgba(54,198,160,.55),inset 0 0 0 4px rgba(0,0,0,.7),0 18px 50px rgba(0,0,0,.6)}
-.coin-face.back::before{content:'';position:absolute;inset:10px;border-radius:50%;opacity:.55;background-image:linear-gradient(rgba(54,198,160,.28) 1px,transparent 1px),linear-gradient(90deg,rgba(54,198,160,.28) 1px,transparent 1px);background-size:18px 18px;-webkit-mask:radial-gradient(circle,#000 52%,transparent 72%);mask:radial-gradient(circle,#000 52%,transparent 72%)}
-.coin-mono{position:relative;z-index:2;display:flex;flex-direction:column;gap:.3rem}
-.coin-mono .l{font-family:var(--serif);font-size:3rem;font-weight:380;line-height:1}
-.coin-face.front .l{color:var(--gold)}.coin-face.back .l{color:var(--teal)}
-.coin-mono .s{font-family:var(--mono);font-size:.52rem;letter-spacing:.26em;text-transform:uppercase}
-.coin-face.front .s{color:rgba(201,162,75,.6)}.coin-face.back .s{color:rgba(54,198,160,.65)}
-.coin-tagline{font-family:var(--serif);font-style:italic;font-size:1.15rem;color:rgba(236,230,216,.55);opacity:0;animation:fadeUp .8s ease 1.3s forwards;text-align:center;padding:0 1.5rem}
-.coin-skip{position:fixed;bottom:1.6rem;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.32);opacity:0;animation:fadeUp .6s ease 1.9s forwards;cursor:pointer}
-.coin-skip:hover{color:var(--teal-soft)}
-@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-@media(prefers-reduced-motion:reduce){#coin-intro{display:none}}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.4rem,5vw,3rem)}
+.eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--teal);display:inline-flex;align-items:center;gap:.7rem}
+.eyebrow::before{content:'';width:30px;height:1px;background:var(--teal)}
 
-/* ───── SPLIT HERO ───── */
-.hero{position:relative;z-index:2;min-height:100svh;display:flex}
-.panel{position:relative;flex:1 1 50%;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:clamp(2rem,6vw,6rem);overflow:hidden;transition:flex-grow 1s cubic-bezier(.7,0,.2,1);color:inherit;text-align:left;cursor:pointer}
-@media(hover:hover){.hero:hover .panel{flex-grow:.85}.hero:hover .panel:hover{flex-grow:1.3}}
-.panel-music{background:radial-gradient(80% 90% at 28% 35%, rgba(201,162,75,.16) 0%, transparent 60%),linear-gradient(155deg,#0c0a07 0%, #060504 100%)}
-.panel-music::before{content:'';position:absolute;inset:0;opacity:.5;pointer-events:none;background:repeating-linear-gradient(0deg, transparent 0 26px, rgba(201,162,75,.05) 26px 27px);-webkit-mask:radial-gradient(60% 70% at 30% 50%, #000, transparent 75%);mask:radial-gradient(60% 70% at 30% 50%, #000, transparent 75%)}
-.panel-music .wave{position:absolute;left:0;right:0;top:50%;height:2px;pointer-events:none;opacity:.6;background:linear-gradient(90deg,transparent,rgba(201,162,75,.45),transparent);filter:blur(.3px);animation:wavePulse 6s ease-in-out infinite}
-.panel-music .wave.w2{top:46%;animation-delay:-2s;opacity:.3}.panel-music .wave.w3{top:54%;animation-delay:-4s;opacity:.3}
-@keyframes wavePulse{0%,100%{transform:scaleX(.6);opacity:.15}50%{transform:scaleX(1);opacity:.55}}
-.panel-tech{background:radial-gradient(80% 90% at 72% 40%, rgba(54,198,160,.14) 0%, transparent 60%),linear-gradient(155deg,#070a09 0%, #040605 100%)}
-.panel-tech::before{content:'';position:absolute;inset:0;opacity:.6;pointer-events:none;background-image:linear-gradient(rgba(54,198,160,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(54,198,160,.07) 1px,transparent 1px);background-size:38px 38px;-webkit-mask:radial-gradient(60% 70% at 70% 50%, #000, transparent 75%);mask:radial-gradient(60% 70% at 70% 50%, #000, transparent 75%)}
-.panel-inner{position:relative;z-index:3;max-width:30rem}
-.panel-music .panel-inner{margin-left:auto;text-align:right;align-items:flex-end;display:flex;flex-direction:column}
-.panel-tech .panel-inner{margin-right:auto}
-.panel-num{font-family:var(--mono);font-size:.7rem;letter-spacing:.3em;margin-bottom:1.4rem}
-.panel-music .panel-num{color:rgba(201,162,75,.6)}.panel-tech .panel-num{color:rgba(54,198,160,.7)}
-.panel-kicker{font-family:var(--mono);font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;margin-bottom:.9rem}
-.panel-music .panel-kicker{color:rgba(201,162,75,.75)}.panel-tech .panel-kicker{color:rgba(54,198,160,.85)}
-.panel-title{font-family:var(--serif);font-size:clamp(2.6rem,5.2vw,4.6rem);line-height:.98;font-weight:380;margin-bottom:1.1rem}
-.panel-music .panel-title{font-style:italic;font-weight:340;color:#f2ead7}.panel-music .panel-title b{font-weight:300;color:var(--gold);font-style:italic}
-.panel-tech .panel-title{font-weight:460;letter-spacing:-.01em;color:#f1f5f2}.panel-tech .panel-title b{font-weight:460;color:var(--teal)}
-.panel-desc{font-family:var(--serif);font-style:italic;font-weight:300;font-size:clamp(1.02rem,1.5vw,1.22rem);line-height:1.5;max-width:24ch;margin-bottom:2rem}
-.panel-music .panel-desc{color:rgba(242,234,215,.6)}.panel-tech .panel-desc{color:rgba(241,245,242,.6);max-width:30ch}
-.panel-cta{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;padding:.85rem 1.5rem;border:1px solid;border-radius:2px;transition:all .3s ease}
-.panel-music .panel-cta{border-color:rgba(201,162,75,.4);color:var(--gold-soft)}.panel-tech .panel-cta{border-color:rgba(54,198,160,.45);color:var(--teal-soft)}
-.panel:hover .panel-cta{transform:translateY(-1px)}
-.panel-music:hover .panel-cta{background:var(--gold);color:#1a1408;border-color:var(--gold)}
-.panel-tech:hover .panel-cta{background:var(--teal);color:#04130f;border-color:var(--teal)}
-.panel-foot{margin-top:2.4rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.22)}
-.seam{position:absolute;top:0;bottom:0;left:50%;width:1px;z-index:4;pointer-events:none;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.18) 18%,rgba(255,255,255,.18) 82%,transparent)}
-.badge{position:absolute;z-index:5;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;pointer-events:none;text-align:center}
-.badge-coin{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 38% 32%, #15171c, #0a0b0d);box-shadow:0 0 0 1px rgba(255,255,255,.1),inset 0 0 0 1px rgba(255,255,255,.06),0 12px 40px rgba(0,0,0,.6);font-family:var(--serif);font-size:1.7rem;position:relative}
-.badge-coin span{background:linear-gradient(135deg,var(--gold) 0% 48%, var(--teal) 52% 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.badge-coin::after{content:'';position:absolute;inset:-4px;border-radius:50%;background:conic-gradient(from 0deg, rgba(201,162,75,.5), rgba(54,198,160,.5), rgba(201,162,75,.5));z-index:-1;filter:blur(6px);opacity:.5;animation:spinRim 14s linear infinite}
-@keyframes spinRim{to{transform:rotate(360deg)}}
-.badge-name{font-family:var(--serif);font-size:1.02rem;color:#efeadd;white-space:nowrap}
-.badge-sub{font-family:var(--mono);font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.4);white-space:nowrap}
-@media(max-width:760px){
-  .hero{flex-direction:column}
-  .panel{min-height:50svh;padding:5rem clamp(1.6rem,7vw,2.5rem)}
-  .panel-music{padding-top:6.5rem}
-  .panel-music .panel-inner{text-align:left;align-items:flex-start;margin-left:0}
-  .seam{left:0;right:0;top:50%;bottom:auto;width:auto;height:1px;background:linear-gradient(to right,transparent,rgba(255,255,255,.18),transparent)}
-  .badge{flex-direction:row;gap:.8rem}
-  .badge-coin{width:54px;height:54px;font-size:1.15rem}
-  .badge-name,.badge-sub{display:none}
-}
+.nav{position:sticky;top:0;z-index:60;background:rgba(10,11,13,.72);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:.6rem;font-family:var(--serif);font-size:1.2rem;font-weight:500;color:#fff}
+.logo .mark{width:26px;height:26px;border-radius:6px;display:grid;place-items:center;background:linear-gradient(135deg,var(--teal),var(--teal-deep));color:#04130f;font-family:var(--mono);font-size:.7rem;font-weight:500}
+.logo b{color:var(--teal);font-weight:500}
+.nav-links{display:flex;align-items:center;gap:1.7rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase}
+.nav-links a{color:var(--paper-dim);transition:color .2s}.nav-links a:hover{color:var(--teal-soft)}
+.nav-cta{padding:.55rem 1.1rem;border:1px solid var(--line-2);border-radius:3px;color:var(--paper)!important}
+.nav-cta:hover{border-color:var(--teal);color:var(--teal-soft)!important}
+@media(max-width:860px){.nav-links a:not(.nav-cta){display:none}}
+
+.hero{position:relative;padding:clamp(4.5rem,11vw,9rem) 0 clamp(3.5rem,7vw,6rem);overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(54,198,160,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(54,198,160,.05) 1px,transparent 1px);background-size:46px 46px;-webkit-mask:radial-gradient(70% 70% at 75% 25%,#000,transparent 78%);mask:radial-gradient(70% 70% at 75% 25%,#000,transparent 78%)}
+.hero::after{content:'';position:absolute;right:-12%;top:-25%;width:65%;height:150%;pointer-events:none;z-index:0;background:radial-gradient(50% 50% at 50% 50%,rgba(54,198,160,.13),transparent 70%)}
+.hero .wrap{position:relative;z-index:1}
+.h-title{font-family:var(--serif);font-weight:370;font-size:clamp(2.4rem,6vw,4.4rem);line-height:1.03;letter-spacing:-.015em;max-width:18ch;margin-top:1.6rem;color:#fafbfb}
+.h-title em{font-style:italic;color:var(--teal);font-weight:330}
+.h-sub{margin-top:1.8rem;max-width:60ch;font-size:clamp(1.04rem,1.6vw,1.22rem);color:var(--paper-dim);font-weight:300}
+.h-actions{margin-top:2.4rem;display:flex;gap:1rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;padding:.95rem 1.7rem;border-radius:3px;transition:all .25s;border:1px solid transparent;cursor:pointer}
+.btn-primary{background:var(--teal);color:#04130f}.btn-primary:hover{background:var(--teal-soft);transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line-2);color:var(--paper)}.btn-ghost:hover{border-color:var(--teal);color:var(--teal-soft)}
+.h-cred{margin-top:2.6rem;font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--paper-faint);display:flex;flex-wrap:wrap;gap:.5rem 1.3rem}
+.h-cred span{display:inline-flex;align-items:center;gap:.5rem}
+.h-cred span::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--teal);opacity:.7}
+
+.sec{padding:clamp(3.5rem,8vw,6.5rem) 0;border-top:1px solid var(--line)}
+.sec-head{margin-bottom:3rem;max-width:62ch}
+.sec-head .eyebrow{margin-bottom:1.3rem}
+.sec-h{font-family:var(--serif);font-weight:380;font-size:clamp(1.7rem,3.6vw,2.6rem);line-height:1.1;letter-spacing:-.01em;color:#f4f6f6}
+.sec-h em{font-style:italic;color:var(--teal);font-weight:340}
+.sec-p{margin-top:1.1rem;color:var(--paper-dim);font-weight:300;font-size:1.06rem;max-width:60ch}
+
+.band{padding:clamp(3rem,7vw,5.5rem) 0;border-top:1px solid var(--line);background:linear-gradient(180deg,rgba(54,198,160,.04),transparent 60%)}
+.band-q{font-family:var(--serif);font-weight:350;font-size:clamp(1.5rem,3.6vw,2.4rem);line-height:1.3;letter-spacing:-.01em;max-width:26ch;color:#eef0f0}
+.band-q b{color:var(--teal);font-weight:400;font-style:italic}
+
+.caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.cap{background:var(--ink-2);padding:2rem 1.8rem;display:flex;flex-direction:column;gap:.8rem;transition:background .3s,transform .3s}
+.cap:hover{background:var(--ink-3);transform:translateY(-2px)}
+.cap-ic{width:36px;height:36px;color:var(--teal)}
+.cap-h{font-family:var(--serif);font-size:1.3rem;font-weight:440;color:#f1f5f2}
+.cap-p{color:var(--paper-dim);font-weight:300;font-size:.96rem}
+
+.tier{margin-top:2.8rem}.tier:first-of-type{margin-top:0}
+.tier-head{display:flex;align-items:baseline;gap:1rem;margin-bottom:1.2rem;flex-wrap:wrap}
+.tier-n{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
+.tier-t{font-family:var(--serif);font-size:1.4rem;font-weight:440;color:#f1f5f2}
+.tier-dur{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--paper-faint);margin-left:auto;border:1px solid var(--line);border-radius:30px;padding:.3rem .8rem}
+.eng{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.eng-item{background:var(--ink-2);padding:1.4rem 1.5rem;transition:background .3s}
+.eng-item:hover{background:var(--ink-3)}
+.eng-h{font-family:var(--sans);font-weight:600;font-size:1.02rem;color:#f1f5f2;margin-bottom:.4rem;display:flex;align-items:center;gap:.55rem}
+.eng-h::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal);flex:none}
+.eng-p{color:var(--paper-dim);font-weight:300;font-size:.9rem;padding-left:1.1rem}
+.eng-note{margin-top:1.6rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.04em;color:var(--paper-faint)}
+.eng-note b{color:var(--teal-soft);font-weight:400}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,3vw,2.4rem)}
+.step{padding-top:1.6rem;border-top:2px solid var(--teal)}
+.step-n{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--teal);margin-bottom:.7rem}
+.step-h{font-family:var(--serif);font-size:1.3rem;font-weight:440;color:#f1f5f2;margin-bottom:.5rem}
+.step-p{color:var(--paper-dim);font-weight:300;font-size:.96rem}
+@media(max-width:720px){.steps{grid-template-columns:1fr;gap:1.6rem}}
+
+.lead{display:grid;grid-template-columns:300px 1fr;gap:clamp(1.6rem,4vw,3.5rem);align-items:start}
+.lead-photo{position:relative;aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:linear-gradient(150deg,var(--teal-deep),#0a0b0d);display:grid;place-items:center;border:1px solid var(--line)}
+.lead-photo::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(54,198,160,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(54,198,160,.1) 1px,transparent 1px);background-size:24px 24px;opacity:.6}
+.lead-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
+.lead-photo .ph{position:relative;z-index:1;font-family:var(--mono);font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(126,227,198,.5);text-align:center;display:flex;flex-direction:column;gap:.5rem;align-items:center}
+.lead-role{font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:.7rem}
+.lead-name{font-family:var(--serif);font-size:clamp(1.7rem,3.4vw,2.3rem);font-weight:420;color:#f4f6f6;margin-bottom:1.1rem}
+.lead-bio{color:var(--paper-dim);font-weight:300;font-size:1.04rem;max-width:62ch}
+.lead-bio p{margin-bottom:1rem}.lead-bio b{color:var(--paper);font-weight:500}
+.lead-facts{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem;padding:0;list-style:none}
+.lead-facts li{font-family:var(--mono);font-size:.68rem;letter-spacing:.03em;color:var(--paper);padding:.5rem .9rem;border:1px solid var(--line-2);border-radius:30px}
+@media(max-width:720px){.lead{grid-template-columns:1fr}.lead-photo{max-width:260px}}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.6rem,3vw,2rem);text-align:center;margin-top:2.8rem}
+.stat{padding:1.4rem .5rem;border:1px solid var(--line);border-radius:3px;background:linear-gradient(180deg,rgba(54,198,160,.04),transparent)}
+.stat-n{font-family:var(--serif);font-size:clamp(1.7rem,4vw,2.7rem);font-weight:420;color:var(--teal);line-height:1;display:block}
+.stat-l{font-family:var(--mono);font-size:.58rem;letter-spacing:.13em;text-transform:uppercase;color:var(--paper-faint);margin-top:.7rem;display:block}
+@media(max-width:600px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+.talks{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.talk{background:var(--ink-2);display:flex;flex-direction:column;overflow:hidden;transition:background .3s,transform .3s}
+.talk:hover{background:var(--ink-3);transform:translateY(-2px)}
+.talk-media{position:relative;height:150px;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,var(--teal-deep),#0a0b0d)}
+.talk-media::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(54,198,160,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(54,198,160,.1) 1px,transparent 1px);background-size:22px 22px;opacity:.6}
+.talk-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
+.talk-media .ph{position:relative;z-index:1;font-family:var(--mono);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(126,227,198,.5);display:flex;flex-direction:column;gap:.5rem;align-items:center}
+.talk-body{padding:1.3rem 1.4rem 1.5rem;display:flex;flex-direction:column;gap:.45rem;flex:1}
+.talk-yr{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;color:var(--teal)}
+.talk-h{font-family:var(--serif);font-size:1.12rem;font-weight:440;color:#f1f5f2;line-height:1.2}
+.talk-p{color:var(--paper-dim);font-size:.88rem;font-weight:300;margin-top:auto}
+
+.cta{text-align:center;padding:clamp(4rem,9vw,7rem) 0;border-top:1px solid var(--line);background:radial-gradient(60% 100% at 50% 0%,rgba(54,198,160,.08),transparent 70%)}
+.cta .sec-h{margin:0 auto}.cta .sec-p{margin:1.2rem auto 2.3rem}
+.cta-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+.foot{border-top:1px solid var(--line);padding:2.6rem 0;background:#060708}
+.foot-in{display:flex;justify-content:space-between;align-items:center;gap:1.2rem;flex-wrap:wrap}
+.foot-l{font-family:var(--serif);color:var(--paper-dim);font-size:.98rem}.foot-l b{color:var(--paper);font-weight:500}
+.foot-r{display:flex;gap:1.4rem;font-family:var(--mono);font-size:.64rem;letter-spacing:.13em;text-transform:uppercase}
+.foot-r a{color:var(--paper-faint);transition:color .2s}.foot-r a:hover{color:var(--teal-soft)}
+.foot-note{margin-top:1.4rem;font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;color:rgba(255,255,255,.2);text-transform:uppercase}
 </style>
 </head>
 <body>
 
-<!-- ───── COIN INTRO ───── -->
-<div id="coin-intro">
-  <div class="coin-scene">
-    <div class="coin">
-      <div class="coin-rim"></div>
-      <div class="coin-face front"><div class="coin-mono"><span class="l">AB</span><span class="s">&#9834; Violin</span></div></div>
-      <div class="coin-face back"><div class="coin-mono"><span class="l">AB</span><span class="s">CTO &middot; AI</span></div></div>
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top"><span class="mark">ANB</span><span>ANB&nbsp;<b>Solutions</b></span></a>
+    <div class="nav-links">
+      <a href="#capabilities">Capabilities</a>
+      <a href="#engagements">Engagements</a>
+      <a href="#approach">Approach</a>
+      <a href="#leadership">Leadership</a>
+      <a class="nav-cta" href="#contact">Get in touch</a>
     </div>
   </div>
-  <div class="coin-tagline">Two disciplines. One way of thinking.</div>
-  <div class="coin-skip">Skip intro &rarr;</div>
-</div>
+</nav>
 
-<!-- ───── SPLIT GATEWAY ───── -->
 <header class="hero" id="top">
-  <div class="seam" aria-hidden="true"></div>
-
-  <!-- LEFT → the violin site -->
-  <a class="panel panel-music" href="https://achibalaviolin.com/" aria-label="Enter Achi Bala Violin">
-    <span class="wave"></span><span class="wave w2"></span><span class="wave w3"></span>
-    <div class="panel-inner">
-      <span class="panel-num reveal">I</span>
-      <span class="panel-kicker reveal d1">Carnatic Violinist &middot; Composer</span>
-      <h2 class="panel-title reveal d2">Achi&nbsp;<b>Bala</b></h2>
-      <p class="panel-desc reveal d3">Carnatic, film, and world music. Sharing Indian culture, one string at a time.</p>
-      <span class="panel-cta reveal d3">Enter the music&nbsp;&rarr;</span>
-      <span class="panel-foot reveal d4">achibalaviolin.com</span>
+  <div class="wrap">
+    <span class="eyebrow reveal">Fractional CTO &middot; Enterprise AI &amp; Automation &middot; Product Strategy</span>
+    <h1 class="h-title reveal d1">Know what to build next. <em>Build it right.</em></h1>
+    <p class="h-sub reveal d2">ANB Solutions helps software and services firms turn repeatable work into products, scale what works, and put AI and automation exactly where it cuts engineering overhead, from DevOps infrastructure to enterprise workflows to QA. The seasoned technical partner you need before you can hire one full time.</p>
+    <div class="h-actions reveal d3">
+      <a class="btn btn-primary" href="#contact">Book a working session</a>
+      <a class="btn btn-ghost" href="#engagements">See how we help</a>
     </div>
-  </a>
-
-  <!-- RIGHT → the ANB Solutions site (founder page) -->
-  <!-- TODO: point href to your live ANB Solutions site + the founder/leadership anchor -->
-  <a class="panel panel-tech" href="https://abhishek-austin.github.io/anb/#leadership" aria-label="Enter ANB Solutions">
-    <div class="panel-inner">
-      <span class="panel-num reveal">II</span>
-      <span class="panel-kicker reveal d1">Founder &middot; Fractional CTO</span>
-      <h2 class="panel-title reveal d2">ANB&nbsp;<b>Solutions</b></h2>
-      <p class="panel-desc reveal d3">Technology leadership for teams turning services into products. A CTO who has built it, scaled it, and sold it.</p>
-      <span class="panel-cta reveal d3">Enter the practice&nbsp;&rarr;</span>
-      <span class="panel-foot reveal d4">ANB Solutions →</span>
+    <div class="h-cred reveal d4">
+      <span>Founder-led by a CTO who led 200+ engineers</span>
+      <span>99.99% uptime, multi-region SaaS</span>
+      <span>Duke M.Eng.</span>
+      <span>Patent holder</span>
     </div>
-  </a>
-
-  <div class="badge" aria-hidden="true">
-    <div class="badge-coin"><span>AB</span></div>
-    <div class="badge-name">Abhishek Balakrishnan</div>
-    <div class="badge-sub">Technologist &middot; Violinist</div>
   </div>
 </header>
 
+<section class="band">
+  <div class="wrap">
+    <p class="band-q reveal">Great teams hit the same wall: the work is excellent, but it is <b>custom every time.</b> We help you make it <b>repeatable, productized, and ready to scale.</b></p>
+  </div>
+</section>
+
+<section class="sec" id="capabilities">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What we do</span>
+      <h2 class="sec-h">Four ways we plug in, scoped to <em>where you are.</em></h2>
+    </div>
+    <div class="caps">
+      <div class="cap reveal">
+        <svg class="cap-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/><circle cx="12" cy="12" r="3.2"/></svg>
+        <h3 class="cap-h">Technology Leadership</h3>
+        <p class="cap-p">Fractional and interim CTO leadership: roadmap, architecture, hiring, and the operating cadence that ships dependably.</p>
+      </div>
+      <div class="cap reveal d1">
+        <svg class="cap-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12l2.5 2.5L16 9"/></svg>
+        <h3 class="cap-h">Services-to-Product Strategy</h3>
+        <p class="cap-p">Turn repeatable services into productized offerings. Position, package, price, and architect what you sell so it scales.</p>
+      </div>
+      <div class="cap reveal d2">
+        <svg class="cap-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.6 5.6l2 2M16.4 16.4l2 2M18.4 5.6l-2 2M7.6 16.4l-2 2"/></svg>
+        <h3 class="cap-h">Enterprise AI &amp; Automation</h3>
+        <p class="cap-p">Find where AI and automation replace manual engineering overhead across DevOps, workflows, and QA, then ship it to production. Built on AWS.</p>
+      </div>
+      <div class="cap reveal d3">
+        <svg class="cap-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        <h3 class="cap-h">Diligence &amp; Risk</h3>
+        <p class="cap-p">Technical due diligence and scope review that tell you what the codebase, the team, and the contract are really saying.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="engagements">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Engagements</span>
+      <h2 class="sec-h">Fixed scope. Defined outcomes. <em>Buy what you need.</em></h2>
+      <p class="sec-p">A short diagnostic gives you a clear picture and a prioritized plan. From there, we build the fix or step in to run it.</p>
+    </div>
+
+    <div class="tier reveal">
+      <div class="tier-head"><span class="tier-n">Tier 01</span><span class="tier-t">Diagnose</span><span class="tier-dur">Weeks, not quarters</span></div>
+      <div class="eng">
+        <div class="eng-item"><div class="eng-h">Productization Readiness Audit</div><p class="eng-p">Which of your repeatable services can become a product? We map delivery patterns, find the wedge, and size the opportunity.</p></div>
+        <div class="eng-item"><div class="eng-h">Scale Readiness Review (1&rarr;5)</div><p class="eng-p">Your product works for a few customers. We pressure-test architecture, data, and team for the next 5x of growth.</p></div>
+        <div class="eng-item"><div class="eng-h">AI &amp; Automation Opportunity Map</div><p class="eng-p">Where AI and automation cut real overhead across DevOps, enterprise workflows, and QA, and where they are a costly distraction.</p></div>
+        <div class="eng-item"><div class="eng-h">Technical Due Diligence</div><p class="eng-p">Buy-side, sell-side, or investor-side assessment of architecture, team, security, and delivery risk.</p></div>
+        <div class="eng-item"><div class="eng-h">Scope &amp; Contract Review</div><p class="eng-p">A technical read of SOWs, MSAs, and RFP responses before you sign: scope creep, IP ownership, integration and delivery risk.</p></div>
+      </div>
+    </div>
+
+    <div class="tier reveal">
+      <div class="tier-head"><span class="tier-n">Tier 02</span><span class="tier-t">Build</span><span class="tier-dur">Weeks to months</span></div>
+      <div class="eng">
+        <div class="eng-item"><div class="eng-h">Services-to-Product Roadmap</div><p class="eng-p">Turn your best delivery playbook into a product spec, an MVP scope, and a costed build plan your team can execute.</p></div>
+        <div class="eng-item"><div class="eng-h">Product &amp; Platform Strategy</div><p class="eng-p">Position, package, and price the product, and define the architecture and integrations to support it at scale.</p></div>
+        <div class="eng-item"><div class="eng-h">DevOps &amp; Delivery Automation</div><p class="eng-p">Stand up the CI/CD, observability, and release practice that take a team from occasional releases to many a day, safely.</p></div>
+        <div class="eng-item"><div class="eng-h">AI &amp; Workflow Automation</div><p class="eng-p">From agentic QA to back-office workflows: build the automation and the MLOps foundation to run it in production.</p></div>
+      </div>
+    </div>
+
+    <div class="tier reveal">
+      <div class="tier-head"><span class="tier-n">Tier 03</span><span class="tier-t">Embed</span><span class="tier-dur">Ongoing retainer</span></div>
+      <div class="eng">
+        <div class="eng-item"><div class="eng-h">Fractional / Interim CTO</div><p class="eng-p">Embedded technical leadership: owning the roadmap, architecture decisions, hiring, and the team's operating rhythm.</p></div>
+        <div class="eng-item"><div class="eng-h">Engineering Org &amp; Hiring Plan</div><p class="eng-p">Design the team structure, roles, and leadership cadence that scale a group from scrappy to dependable.</p></div>
+      </div>
+    </div>
+
+    <p class="eng-note reveal">Engagements run from <b>focused six-week diagnostics</b> to <b>six-month builds.</b> Pricing is scoped to the work, so let's talk about where you are.</p>
+  </div>
+</section>
+
+<section class="sec" id="approach">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How we work</span>
+      <h2 class="sec-h">Start small. <em>Prove value fast.</em> Scale the engagement.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="step-n">01 / Diagnose</div><h3 class="step-h">See clearly</h3><p class="step-p">A fixed-scope assessment that gives you an honest picture and a prioritized plan, in weeks, not quarters.</p></div>
+      <div class="step reveal d1"><div class="step-n">02 / Plan</div><h3 class="step-h">Agree the path</h3><p class="step-p">A roadmap your engineers and your board can both act on, with the trade-offs made explicit.</p></div>
+      <div class="step reveal d2"><div class="step-n">03 / Build &amp; Embed</div><h3 class="step-h">Make it stick</h3><p class="step-p">We help execute, or step in as embedded leadership, until the change holds without us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="leadership">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Leadership</span>
+      <h2 class="sec-h">Led by a CTO who has <em>made the climb.</em></h2>
+    </div>
+    <div class="lead">
+      <div class="lead-photo reveal">
+        <!-- TODO: drop your headshot at images/abhishek.jpg -->
+        <img src="images/abhishek.jpg" alt="Abhishek Balakrishnan" onerror="this.style.display='none'">
+        <span class="ph"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-6 8-6s8 2 8 6"/></svg>Add headshot</span>
+      </div>
+      <div class="reveal d1">
+        <div class="lead-role">Founder &amp; Principal</div>
+        <div class="lead-name">Abhishek Balakrishnan</div>
+        <div class="lead-bio">
+          <p>For nearly a decade, Abhishek was <b>CTO and an owner of ANB Systems</b>, where he grew the engineering organization to <b>more than 200 people</b> and scaled the platform to <b>nearly 50 enterprise clients</b> and global use. He has taken a product the full distance, from working to dependable, which is the climb ANB Solutions exists to shorten for others.</p>
+          <p>He built the DevOps practice behind a <b>99.99%-uptime, multi-region product</b> with mature disaster recovery and dozens of deployments a day, and led the consolidation of <b>dozens of legacy systems</b> onto a single modern platform, through the company's <b>acquisition by DNV</b>. He holds an <b>M.Eng. in Electrical &amp; Computer Engineering from Duke</b>, is an inventor on a Schlumberger patent cited by four others, and keynotes on AI, agents, and automation. His default stack is AWS.</p>
+        </div>
+        <ul class="lead-facts">
+          <li>Nearly a decade as CTO</li>
+          <li>Led 200+ engineers</li>
+          <li>~50 enterprise clients, global</li>
+          <li>99.99% uptime, multi-region</li>
+          <li>Dozens of deploys / day</li>
+          <li>Dozens of legacy systems consolidated</li>
+          <li>Duke M.Eng., ECE</li>
+          <li>Patent &middot; 4 citations</li>
+          <li>AWS</li>
+        </ul>
+      </div>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><span class="stat-n">200+</span><span class="stat-l">Engineers led</span></div>
+      <div class="stat"><span class="stat-n">~50</span><span class="stat-l">Enterprise clients, global</span></div>
+      <div class="stat"><span class="stat-n">99.99%</span><span class="stat-l">Uptime, multi-region</span></div>
+      <div class="stat"><span class="stat-n">Exit</span><span class="stat-l">Acquired by DNV</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="speaking">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Thought leadership</span>
+      <h2 class="sec-h">On stage, on the record.</h2>
+    </div>
+    <div class="talks">
+      <div class="talk reveal">
+        <div class="talk-media">
+          <!-- TODO: images/energy-thought-summit.jpg -->
+          <img src="images/energy-thought-summit.jpg" alt="Energy Thought Summit keynote" onerror="this.style.display='none'">
+          <span class="ph"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5L5 21"/></svg>Add photo</span>
+        </div>
+        <div class="talk-body"><span class="talk-yr">2026 &middot; San Antonio</span><h3 class="talk-h">Energy Thought Summit</h3><p class="talk-p">Keynote on putting AI to work at enterprise scale.</p></div>
+      </div>
+      <div class="talk reveal d1">
+        <div class="talk-media">
+          <!-- TODO: images/future-digital-twin.jpg -->
+          <img src="images/future-digital-twin.jpg" alt="Future Digital Twin & AI 2026" onerror="this.style.display='none'">
+          <span class="ph"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5L5 21"/></svg>Add photo</span>
+        </div>
+        <div class="talk-body"><span class="talk-yr">2026 &middot; Houston</span><h3 class="talk-h">Future Digital Twin &amp; AI</h3><p class="talk-p">Where digital twins meet agentic AI in industrial systems.</p></div>
+      </div>
+      <div class="talk reveal d2">
+        <div class="talk-media">
+          <!-- TODO: images/energize-2026.jpg -->
+          <img src="images/energize-2026.jpg" alt="Energize 2026 keynote" onerror="this.style.display='none'">
+          <span class="ph"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5L5 21"/></svg>Add photo</span>
+        </div>
+        <div class="talk-body"><span class="talk-yr">2026 &middot; Chennai &amp; Houston</span><h3 class="talk-h">Energize: AI Agents</h3><p class="talk-p">Opening keynote &mdash; "AI Agents: Unveiling the Future."</p></div>
+      </div>
+      <div class="talk reveal d3">
+        <div class="talk-media">
+          <!-- TODO: images/duke-nicholas.jpg -->
+          <img src="images/duke-nicholas.jpg" alt="Duke Nicholas Institute talk" onerror="this.style.display='none'">
+          <span class="ph"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.8"/><path d="M21 15l-5-5L5 21"/></svg>Add photo</span>
+        </div>
+        <div class="talk-body"><span class="talk-yr">Duke University</span><h3 class="talk-h">Nicholas Institute</h3><p class="talk-p">Power Lunch speaker on big data and distributed computing.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <span class="eyebrow reveal" style="justify-content:center">Let's talk</span>
+    <h2 class="sec-h reveal d1">Where are you stuck on the climb?</h2>
+    <p class="sec-p reveal d2">Whether you are weighing a productization bet, prepping for diligence, or trying to get AI past the demo, start with a working session. We take on a small number of engagements at a time.</p>
+    <div class="cta-actions reveal d3">
+      <a class="btn btn-primary" href="mailto:abhishek@theanbgroup.com?subject=ANB%20Solutions%20inquiry">Email ANB Solutions</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/a-balakrishnan/" target="_blank" rel="noopener">Connect on LinkedIn &#8599;</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-in">
+      <div class="foot-l">ANB&nbsp;<b>Solutions, Inc.</b> &middot; Austin, Texas</div>
+      <nav class="foot-r">
+        <a href="#top">Top</a>
+        <a href="#engagements">Engagements</a>
+        <a href="mailto:abhishek@theanbgroup.com">Email</a>
+        <a href="https://www.linkedin.com/in/a-balakrishnan/" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+    <div class="foot-note">Fractional CTO &middot; Enterprise AI &amp; Automation &middot; Product Strategy &middot; Technical Due Diligence</div>
+  </div>
+</footer>
+
 <script>
-/* Coin: skip on click, once per session. CSS auto-dismisses regardless. */
 (function(){
   try{
-    var ci=document.getElementById('coin-intro'); if(!ci) return;
-    var seen=false; try{ seen=sessionStorage.getItem('ab_coin')==='1'; }catch(e){}
-    if(seen){ ci.style.display='none'; return; }
-    try{ sessionStorage.setItem('ab_coin','1'); }catch(e){}
-    ci.addEventListener('click',function(){ ci.classList.add('gone'); });
-  }catch(e){}
+    var els=document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in')}); return; }
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    },{threshold:.12, rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){ io.observe(e); });
+    requestAnimationFrame(function(){ document.querySelectorAll('.hero .reveal').forEach(function(e){e.classList.add('in')}); });
+  }catch(err){ document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in')}); }
 })();
-/* Reveal hero content (additive; visible by default without JS). */
-(function(){ try{ requestAnimationFrame(function(){ document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('in')}); }); }catch(e){} })();
 </script>
 </body>
 </html>
