@@ -8,11 +8,26 @@ url: https://abhishek-austin.github.io
 author: Abhishek Balakrishnan
 email: abhishek@theanbgroup.com
 linkedin: https://www.linkedin.com/in/a-balakrishnan/
+job_title: Fractional CTO
+organization: ANB Solutions, Inc.
+
+# ── SEO ──────────────────────────────────────────────────────────────
+# Paste the verification token from Google Search Console here (the part
+# inside content="..." of the meta tag it gives you). Leave blank until then.
+google_site_verification: ""
+
+# Google Analytics 4 Measurement ID. Leave blank to disable.
+google_analytics: "G-EDB64XD0N4"
 
 # ── Build ────────────────────────────────────────────────────────────
 # We ship our own layouts, so no gem theme is needed.
 markdown: kramdown
 permalink: /blog/:title/
+
+# GitHub Pages-supported plugins: auto-generate /sitemap.xml and /feed.xml.
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
 
 # Default the front matter for posts so the EA only has to fill in a few
 # fields. Anything under _posts/ uses the post layout automatically.

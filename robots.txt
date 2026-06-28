@@ -1,0 +1,9 @@
+---
+# Front matter (these two dashes) lets Jekyll fill in the sitemap URL below.
+permalink: /robots.txt
+sitemap: false
+---
+User-agent: *
+Allow: /
+
+Sitemap: {{ '/sitemap.xml' | absolute_url }}

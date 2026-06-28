@@ -16,6 +16,9 @@
 <meta name="description" content="{{ page_desc }}">
 <link rel="canonical" href="{{ canonical }}">
 <meta name="theme-color" content="#0a0b0d">
+{%- if site.google_site_verification and site.google_site_verification != "" %}
+<meta name="google-site-verification" content="{{ site.google_site_verification }}">
+{%- endif %}
 
 <!-- Open Graph / LinkedIn card -->
 <meta property="og:site_name" content="ANB Solutions">
@@ -34,4 +37,48 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Hanken+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+{%- if site.google_analytics and site.google_analytics != "" %}
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.google_analytics }}');
+</script>
+{%- endif %}
+
+<!-- RSS feed (jekyll-feed) -->
+{%- feed_meta %}
+
+<!-- Structured data: who this site is about -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ site.author | jsonify }},
+  "url": {{ site.url | jsonify }},
+  "jobTitle": {{ site.job_title | jsonify }},
+  "worksFor": { "@type": "Organization", "name": {{ site.organization | jsonify }} },
+  "sameAs": [ {{ site.linkedin | jsonify }} ]
+}
+</script>
+{%- if page.layout == "post" %}
+<!-- Structured data: this article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page_desc | jsonify }},
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.date | date_to_xmlschema }}",
+  "url": {{ canonical | jsonify }},
+  "mainEntityOfPage": {{ canonical | jsonify }},
+  "image": {{ page_image | jsonify }},
+  "author": { "@type": "Person", "name": {{ site.author | jsonify }}, "url": {{ site.url | jsonify }} },
+  "publisher": { "@type": "Organization", "name": {{ site.organization | jsonify }} }
+}
+</script>
+{%- endif %}
 </head>
